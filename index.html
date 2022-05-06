@@ -12,17 +12,14 @@
         <title>Thapar Maps</title>
     </head>
     <body>
+        <div class="hamburger"></div>
+        <input type="text" id="search" placeholder="Search">
+        
+        <!-- div for map -->
         <div id='map'></div>
-        <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoidmlzaGlzdGIiLCJhIjoiY2wydXFxNXA4MDRrazNrbXBjZGdndDZzdiJ9.iPLdTCf_wJLZ6TdNGo5Idw';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-v9',
-            //cos complex 30.354461488469358, 76.36240522728016
-            center:{lat:30.354461488469358,lng:76.36240522728016},
-            zoom:17
-        });
-        </script>
+        
+        
+    
 
     </body>
 
