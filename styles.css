@@ -12,7 +12,11 @@ body{
     height: 100%;
     width: 100%;
 }
+/* .mapboxgl-control-container{
+    transform: scale(2);
 
+
+} */
 #search {
     position: fixed;
     width: 260px;
@@ -24,4 +28,21 @@ body{
     padding-left: 25px;
     border-radius: 8px;
     /* box-shadow: 50px; */
+}
+
+.box{
+    flex-direction: column;
+    z-index: 2;
+}
+
+.flex-container {
+  display: flex;
+  background-color: Black;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
