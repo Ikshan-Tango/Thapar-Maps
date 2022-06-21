@@ -20,7 +20,7 @@ var map = new mapboxgl.Map({
     zoom: 17,
     //the thing below points to the bounds const
     // used to set boundaries
-    // maxBounds: bounds
+    maxBounds: bounds
 });
 
 //Geoloaction
