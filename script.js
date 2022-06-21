@@ -1,6 +1,8 @@
 //   map init below
 mapboxgl.accessToken =
-    "pk.eyJ1IjoidmlzaGlzdGIiLCJhIjoiY2wydXFxNXA4MDRrazNrbXBjZGdndDZzdiJ9.iPLdTCf_wJLZ6TdNGo5Idw";
+    "pk.eyJ1IjoiYWl0Y2hlc3NiZWUiLCJhIjoiY2wydXI4NHI3MDB4ODNkczF6cmdkdW5lYSJ9.0MLozCdZZdpPh0xNtIo8Dw";
+
+    
 
 //Map boundaries
 const bounds=[
@@ -12,12 +14,13 @@ const bounds=[
 var map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11",
+    // style: "mapbox://styles/aitchessbee/cl34xisfc001714p2ozc7g3g4",
     //cos complex 30.354461488469358, 76.36240522728016
     center: { lat: 30.354461488469358, lng: 76.36240522728016 },
     zoom: 17,
     //the thing below points to the bounds const
     // used to set boundaries
-    maxBounds: bounds
+    // maxBounds: bounds
 });
 
 //Geoloaction
@@ -203,3 +206,47 @@ map.on("load", () => {
         map.getCanvas().style.cursor = "";
     });
 });
+
+map.on('load', () => {
+    map.addSource('mapbox-rooms', {
+    type: 'vector',
+    // Use any Mapbox-hosted tileset using its tileset id.
+    // Learn more about where to find a tileset id:
+    // https://docs.mapbox.com/help/glossary/tileset-id/
+    url: 'mapbox://aitchessbee.cl34tdq9u047v27phgcp0fksm-6fyd2'
+    });
+    // map.addLayer({
+    // 'id': 'room-data',
+    // 'type': 'line',
+    // 'source': 'mapbox-rooms',
+    // // 'source-layer': 'contour',
+    // 'layout': {
+    // 'line-join': 'round',
+    // 'line-cap': 'round'
+    // },
+    // // 'paint': {
+    // // 'line-color': '#ff69b4',
+    // // 'line-width': 1
+    // // }
+    // });
+
+    map.addLayer({
+        'id': 'rooms',
+        'type': 'circle',
+        'source': 'mapbox-rooms',
+        // 'source-layer': 'sf2010',
+        // 'paint': {
+        // // Make circles larger as the user zooms from z12 to z22.
+        // // 'circle-radius': {
+        // // 'base': 1.75,
+        // // // 'stops': [
+        // // // [12, 2],
+        // // // [22, 180]
+        // // // ]
+        // // },
+        // // Color circles by ethnicity, using a `match` expression.
+        // // 'circle-color': '#000',
+        // }
+        }); 
+        
+    });
